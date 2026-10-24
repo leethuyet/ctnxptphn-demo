@@ -52,8 +52,12 @@ export const NewsPage: React.FC = () => {
 
   // Lọc bài viết theo chuyên mục và từ khóa tìm kiếm (tiếng Việt có dấu/không dấu)
   const filteredArticles = useMemo(() => {
-    return allArticles.filter(art => {
-      const matchCat = selectedCategory === 'all' || art.categoryId === selectedCategory;
+    const matched = allArticles.filter(art => {
+      // Khi chọn 'tin-moi', tổng hợp các bài viết mới nhất từ tất cả chuyên mục
+      const matchCat =
+        selectedCategory === 'all' ||
+        selectedCategory === 'tin-moi' ||
+        art.categoryId === selectedCategory;
       if (!matchCat) return false;
 
       if (!searchQuery.trim()) return true;
@@ -61,6 +65,15 @@ export const NewsPage: React.FC = () => {
       const matchSummary = matchVietnamese(art.summary, searchQuery);
       const matchCategory = matchVietnamese(art.category, searchQuery);
       return matchTitle || matchSummary || matchCategory;
+    });
+
+    // Luôn sắp xếp theo ngày đăng giảm dần (mới nhất lên đầu)
+    return [...matched].sort((a, b) => {
+      const parseDate = (d: string) => {
+        const parts = d.split('/');
+        return parts.length === 3 ? new Date(+parts[2], +parts[1] - 1, +parts[0]).getTime() : 0;
+      };
+      return parseDate(b.publishDate) - parseDate(a.publishDate);
     });
   }, [allArticles, selectedCategory, searchQuery]);
 
@@ -243,7 +256,9 @@ export const NewsPage: React.FC = () => {
             Không tìm thấy bài viết phù hợp
           </h3>
           <p className="text-slate-600 text-base max-w-md mx-auto">
-            Không tìm thấy kết quả nào phù hợp với từ khóa "{searchQuery}".
+            {searchQuery.trim()
+              ? `Không tìm thấy kết quả nào phù hợp với từ khóa "${searchQuery}".`
+              : 'Hiện tại chuyên mục này đang được cập nhật các bài viết mới nhất.'}
           </p>
           <button
             type="button"

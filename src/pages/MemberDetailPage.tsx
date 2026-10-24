@@ -51,6 +51,16 @@ export const MemberDetailPage: React.FC = () => {
     window.print();
   };
 
+  const handleBack = () => {
+    // Kiểm tra lịch sử điều hướng nội bộ của React Router (idx > 0)
+    if (window.history.state && typeof window.history.state.idx === 'number' && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      // Phương án dự phòng khi mở link trực tiếp từ bên ngoài: chuyển về danh sách hội viên phường/xã tương ứng
+      navigate(`/hoi-vien/phuong/${member.wardId}`);
+    }
+  };
+
   return (
     <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
       {/* Thanh điều hướng quay lại & Công cụ in ấn */}
@@ -58,7 +68,7 @@ export const MemberDetailPage: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
-            onClick={() => navigate(-1)}
+            onClick={handleBack}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm sm:text-base border-2 border-slate-300 shadow-sm transition-all min-h-[44px] cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4 stroke-[2.5]" />
