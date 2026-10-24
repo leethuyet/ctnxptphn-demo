@@ -96,7 +96,7 @@ export const MemberDetailPage: React.FC = () => {
         <AlertCircle className="w-6 h-6 text-amber-700 shrink-0 mt-0.5" />
         <div className="text-sm sm:text-base leading-relaxed">
           <span className="font-extrabold text-amber-950 uppercase tracking-wide">
-            Hồ sơ mẫu giả lập (Bản Demo Bước 2.2):{' '}
+            Hồ sơ mẫu giả lập (Dữ liệu minh họa):{' '}
           </span>
           Toàn bộ thông tin hội viên dưới đây là dữ liệu mẫu giả định để kiểm tra giao diện hiển thị, không phải dữ liệu thật của bất kỳ cá nhân nào.
         </div>

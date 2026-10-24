@@ -141,8 +141,8 @@ export const HomePage: React.FC = () => {
                 <span className="px-3 py-1 rounded-full bg-[#e8f5ee] text-[#138348] font-bold text-xs">
                   {featuredMain.category}
                 </span>
-                <span className="text-xs text-slate-500 font-medium flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                <span className="text-xs text-[#64748B] font-medium flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5 text-[#64748B]" />
                   {featuredMain.publishDate}
                 </span>
               </div>
@@ -150,7 +150,7 @@ export const HomePage: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-black leading-[1.35]">
                 <Link 
                   to={`/tin-tuc/${featuredMain.id}`}
-                  className="text-[#138348] hover:text-[#B91C1C] focus:text-[#B91C1C] focus:outline-none transition-colors duration-150"
+                  className="text-[#111827] hover:text-[#138348] focus:text-[#138348] focus:outline-none transition-colors duration-150"
                 >
                   {featuredMain.title}
                 </Link>
@@ -169,7 +169,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-medium">
+              <span className="text-xs text-[#64748B] font-medium">
                 {featuredMain.readTime || '5 phút đọc'}
               </span>
 
@@ -200,8 +200,8 @@ export const HomePage: React.FC = () => {
                       <span className="font-bold text-[#138348] bg-[#e8f5ee] px-2.5 py-0.5 rounded-md">
                         {art.category}
                       </span>
-                      <span className="text-slate-500 flex items-center gap-1 font-medium">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                      <span className="text-[#64748B] flex items-center gap-1 font-medium">
+                        <Calendar className="w-3.5 h-3.5 text-[#64748B]" />
                         {art.publishDate}
                       </span>
                     </div>
@@ -209,7 +209,7 @@ export const HomePage: React.FC = () => {
                     <h4 className="font-bold text-base leading-[1.35] line-clamp-2">
                       <Link 
                         to={`/tin-tuc/${art.id}`}
-                        className="text-[#138348] hover:text-[#B91C1C] focus:text-[#B91C1C] focus:outline-none transition-colors duration-150"
+                        className="text-[#111827] hover:text-[#138348] focus:text-[#138348] focus:outline-none transition-colors duration-150"
                       >
                         {art.title}
                       </Link>
@@ -223,7 +223,7 @@ export const HomePage: React.FC = () => {
                   <div className="pt-2 text-right">
                     <Link
                       to={`/tin-tuc/${art.id}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#138348] hover:text-[#B91C1C] transition-colors duration-150"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#138348] hover:text-[#0B5E34] transition-colors duration-150"
                     >
                       <span>Xem tiếp</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -250,7 +250,7 @@ export const HomePage: React.FC = () => {
             </h2>
             
             <p className="text-slate-600 text-base leading-relaxed">
-              Hệ thống danh mục Phường / Xã thuộc 30 Quận, Huyện, Thị xã TP Hà Nội sau sắp xếp 2025 và hồ sơ chi tiết hội viên mẫu. Giao diện tối ưu chữ lớn, dễ thao tác cho các cô chú hội viên.
+              Hệ thống danh mục 126 đơn vị hành chính cấp xã (51 Phường và 75 Xã) thuộc TP Hà Nội theo Nghị quyết 1656/NQ-UBTVQH15 và cơ sở dữ liệu hồ sơ hội viên mẫu. Giao diện tối ưu chữ lớn, dễ thao tác cho các cô chú hội viên.
             </p>
           </div>
 
@@ -296,7 +296,7 @@ export const HomePage: React.FC = () => {
 
                   <Link
                     to={`/tin-tuc?cat=${category.id}`}
-                    className="text-xs font-bold text-[#138348] hover:text-[#B91C1C] transition-colors duration-150 shrink-0"
+                    className="text-xs font-bold text-[#138348] hover:text-[#0B5E34] transition-colors duration-150 shrink-0"
                   >
                     Xem tất cả
                   </Link>
@@ -313,12 +313,12 @@ export const HomePage: React.FC = () => {
                       <div key={art.id}>
                         <Link
                           to={`/tin-tuc/${art.id}`}
-                          className="font-bold text-[#138348] hover:text-[#B91C1C] focus:text-[#B91C1C] focus:outline-none transition-colors duration-150 text-sm leading-[1.35] line-clamp-2 flex items-start gap-1.5"
+                          className="font-bold text-[#111827] hover:text-[#138348] focus:text-[#138348] focus:outline-none transition-colors duration-150 text-sm leading-[1.35] line-clamp-2 flex items-start gap-1.5"
                         >
-                          <span className="text-[#D5222A] mt-1 shrink-0">•</span>
+                          <span className="text-[#138348] mt-1 shrink-0">•</span>
                           <span>{art.title}</span>
                         </Link>
-                        <span className="text-[11px] text-slate-500 pl-3 font-medium">
+                        <span className="text-[11px] text-[#64748B] pl-3 font-medium">
                           {art.publishDate}
                         </span>
                       </div>

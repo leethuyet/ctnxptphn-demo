@@ -22,16 +22,18 @@ export interface NewsArticleDemo {
 export type UnitType = 'Phường' | 'Xã' | 'Thị trấn';
 
 /**
- * Đơn vị hành chính cấp xã (Phường / Xã / Thị trấn)
+ * Đơn vị hành chính cấp xã (Phường / Xã) theo Nghị quyết 1656/NQ-UBTVQH15
  */
 export interface AdministrativeUnit {
-  id: string;             // Ví dụ: 'bd-kim-ma'
-  name: string;           // Ví dụ: 'Kim Mã'
+  id: string;             // Ví dụ: 'phuong-hoan-kiem'
+  name: string;           // Ví dụ: 'Hoàn Kiếm'
   unitType: UnitType;     // 'Phường' | 'Xã' | 'Thị trấn'
-  district: string;       // Ví dụ: 'Quận Ba Đình'
+  category?: 'phuong' | 'xa'; // Phân loại phục vụ lọc Phường / Xã
+  district?: string;       // Ví dụ: 'TP Hà Nội (NQ 1656/NQ-UBTVQH15)'
   memberCount: number;    // Số hội viên mẫu giả lập
-  statusNote?: string;    // Ghi chú trạng thái (ví dụ: 'Đang chờ đối chiếu chuẩn hóa')
-  areaCode?: string;      // Mã địa bàn minh họa
+  statusNote?: string;    // Ghi chú trạng thái
+  areaCode?: string;      // Mã địa bàn / mã nội bộ
+  isLegacy?: boolean;     // Đánh dấu địa bàn cũ trước sắp xếp 2025
 }
 
 /**

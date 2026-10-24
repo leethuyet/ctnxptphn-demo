@@ -106,24 +106,24 @@ export const NewsArticleDetailPage: React.FC = () => {
               <Tag className="w-3.5 h-3.5" />
               {article.category}
             </span>
-            <span className="inline-flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium">
-              <Calendar className="w-4 h-4 text-slate-400" />
+            <span className="inline-flex items-center gap-1 text-[#64748B] text-xs sm:text-sm font-medium">
+              <Calendar className="w-4 h-4 text-[#64748B]" />
               {article.publishDate}
             </span>
             {article.readTime && (
-              <span className="inline-flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium">
-                <Clock className="w-4 h-4 text-slate-400" />
+              <span className="inline-flex items-center gap-1 text-[#64748B] text-xs sm:text-sm font-medium">
+                <Clock className="w-4 h-4 text-[#64748B]" />
                 {article.readTime}
               </span>
             )}
           </div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#138348] leading-[1.35] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-[1.35] tracking-tight">
             {article.title}
           </h1>
 
           {article.author && (
-            <p className="text-xs sm:text-sm text-slate-500 flex items-center gap-1.5 font-semibold">
+            <p className="text-xs sm:text-sm text-[#64748B] flex items-center gap-1.5 font-semibold">
               <User className="w-4 h-4 text-[#138348]" />
               <span>Nguồn / Tác giả: {article.author}</span>
             </p>
@@ -179,15 +179,15 @@ export const NewsArticleDetailPage: React.FC = () => {
                 className="bg-white rounded-2xl border-2 border-slate-200 hover:border-[#138348] p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div className="space-y-2">
-                  <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5" />
+                  <span className="text-xs text-[#64748B] font-semibold flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5 text-[#64748B]" />
                     {rel.publishDate}
                   </span>
-                  <h3 className="font-bold text-[#138348] group-hover:text-[#B91C1C] transition-colors duration-150 text-base leading-[1.35] line-clamp-2">
+                  <h3 className="font-bold text-[#111827] group-hover:text-[#138348] transition-colors duration-150 text-base leading-[1.35] line-clamp-2">
                     {rel.title}
                   </h3>
                 </div>
-                <div className="pt-3 text-[#138348] group-hover:text-[#B91C1C] font-bold text-sm flex items-center gap-1 mt-2 transition-colors duration-150">
+                <div className="pt-3 text-[#138348] group-hover:text-[#0B5E34] font-bold text-sm flex items-center gap-1 mt-2 transition-colors duration-150">
                   <span>Đọc tiếp</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

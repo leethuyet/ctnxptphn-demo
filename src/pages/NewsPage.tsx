@@ -195,8 +195,8 @@ export const NewsPage: React.FC = () => {
                     <Tag className="w-3.5 h-3.5" />
                     {article.category}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-slate-500 text-xs font-medium">
-                    <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                  <span className="inline-flex items-center gap-1 text-[#64748B] text-xs font-medium">
+                    <Calendar className="w-3.5 h-3.5 text-[#64748B]" />
                     {article.publishDate}
                   </span>
                 </div>
@@ -204,7 +204,7 @@ export const NewsPage: React.FC = () => {
                 <h2 className="text-xl font-bold leading-[1.35] line-clamp-2">
                   <Link 
                     to={`/tin-tuc/${article.id}`}
-                    className="text-[#138348] hover:text-[#B91C1C] focus:text-[#B91C1C] focus:outline-none transition-colors duration-150"
+                    className="text-[#111827] hover:text-[#138348] focus:text-[#138348] focus:outline-none transition-colors duration-150"
                   >
                     {article.title}
                   </Link>
@@ -215,8 +215,8 @@ export const NewsPage: React.FC = () => {
                 </p>
 
                 {article.author && (
-                  <p className="text-xs text-slate-400 flex items-center gap-1 pt-1">
-                    <User className="w-3.5 h-3.5 text-slate-400" />
+                  <p className="text-xs text-[#64748B] flex items-center gap-1 pt-1">
+                    <User className="w-3.5 h-3.5 text-[#64748B]" />
                     <span className="truncate">{article.author}</span>
                   </p>
                 )}
