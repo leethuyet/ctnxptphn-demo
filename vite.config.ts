@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Đảm bảo đường dẫn tài nguyên tương đối tương thích GitHub Pages và mọi subpath
+  base: '/ctnxptphn-demo/', // Đường dẫn cơ sở chuẩn cho GitHub Pages
   plugins: [
     react(),
     VitePWA({
@@ -29,8 +29,8 @@ export default defineConfig({
         orientation: 'portrait',
         theme_color: '#138348',
         background_color: '#FFFFFF',
-        start_url: './',
-        scope: './',
+        start_url: '/ctnxptphn-demo/',
+        scope: '/ctnxptphn-demo/',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -52,8 +52,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,webp,svg,woff2}'],
-        // Tương thích base path tương đối khi chạy trên GitHub Pages
-        navigateFallback: 'index.html',
+        navigateFallback: '/ctnxptphn-demo/index.html',
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
